@@ -1,21 +1,23 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
     Solution s = new Solution();
-   String[] my_string = new String[]{"ProgrammerS123"};
-    s.solution("ProgrammerS123", 11);
+   int[] numbers = new int[]{1, 2, 3, 4, 5};
+    s.solution(numbers);
     }
     }
 class Solution {
-    public String solution(String my_string, int n) {
-        System.out.println(my_string);
-        String answer = "";
-        String[] arr = my_string.split("");
-        for (int i = arr.length-n; i < arr.length; i++) {
-            answer += arr[i];
+    public List<Integer> solution(int[] numbers) {
+        List<Integer> answer = new ArrayList<>();
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = numbers[i] + numbers[i];
+            answer.add(numbers[i]);
         }
-        System.out.println(answer);
+
         return answer;
     }
 }
