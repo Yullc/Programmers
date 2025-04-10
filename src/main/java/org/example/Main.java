@@ -10,22 +10,25 @@ public class Main {
         int[] absolutes = new int[]{4,7,12};
         boolean[] signs = new boolean[absolutes.length];
         String s = "addp";
-        sol.solution(absolutes,signs);
+        sol.solution(3,30,5);
     }
 }
 
 class Solution {
-    public int solution(int[] absolutes, boolean[] signs) {
-        int answer = 0;
-        for (int i = 0; i < absolutes.length; i++) {
-            if (signs[i]) {
-                answer += absolutes[i];
-            } else {
-                answer -= absolutes[i];
-            }
+    public long solution(int price, int money, int count) {
+        long answer=0;
+        long total=0 ;
+        for(int i=1;i<=count;i++){
+            total += price *i;
         }
-        System.out.println(answer);
-        return answer;
+        if (total > money) {
+            answer = total-money;
+            return answer;
+        } else if (total == money) {
+            return 0;
+        } else{
+            return 0;
+        }
     }
 }
 
